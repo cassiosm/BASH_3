@@ -21,13 +21,10 @@ principal()
 
     echo
     echo -n "Qual a opcao desejada ? "
-    read opcao          # faz a leitura da variável "opcao", 
-                        # que será utilizada no comando case
-                        # para indicar qual a opção a ser utilizada
-
-                        # caso o valor da variável "opcao"...
+	    read opcao   #A variável "opcao" será utilizada no comando case para indicar qual a opção a ser utilizada.
+                        
     case $opcao in
-        1)              # seja igual a "1", então ele fará as instruções abaixo
+        1)              #caso o resultado da variavel seja igual a "1", então ele fará as instruções abaixo
             clear	#limpa a tela
 			localizacao_arquivos
 		;;                                
@@ -93,8 +90,8 @@ principal()
 
 localizacao_arquivos() {             # função da opção localização arquivos
     pwd 
-    read pause          # usado para pausar a execução do script
-    principal           # volta para a função principal
+    read pause          #pausa o script
+    principal           #volta para a função principal
 }
 
 mostrar_tipo_arquivo() {             # função informa o que é o arquivo se é um texto ou um shell script por exemplo 
