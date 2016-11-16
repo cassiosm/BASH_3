@@ -26,48 +26,48 @@ principal()
     case $opcao in
         1)              #caso o resultado da variavel seja igual a "1", então ele fará as instruções abaixo
             clear	#limpa a tela
-			localizacao_arquivos
+			localizacaoarquivos
 		;;                                
         2)
             clear	#limpa a tela
-			mostrar_tipo_arquivo           
+			mostrartipoarquivo           
 		;; 
 
         3)
             clear	#limpa a tela
-           	criar_diretorio
+           	criardiretorio
 		;; 
         4)
             clear	#limpa a tela
-			deletar_diretorio		
+			deletardiretorio		
 		;; 
         5)
             clear	#limpa a tela
-			mostra_maior   
+			mostramaior   
 		;;
         6)
 	    clear	#limpa a tela
-			ultimas_linhas
+			ultimaslinhas
         ;; 
         7)
             clear
-			primeiras_linhas
+			primeiraslinhas
         ;; 
 		8)
             clear	#limpa a tela
-			localizar_comando          
+			localizarcomando          
 		;; 
         9)
             clear	#limpa a tela
-			diretorio_form_arvore
+			diretorioformarvore
         ;; 
         10)
             clear	#limpa a tela
-			copiar_arquivo
+			copiararquivo
         ;; 
         11)
             clear	#limpa a tela
-           	mover_arquivo
+           	moverarquivo
 		;; 
 		12)
             clear	#limpa a tela
@@ -82,19 +82,13 @@ principal()
     esac
 }
 
-
-
-
-
-
-
-localizacao_arquivos() {             # função da opção localização arquivos
+localizacaoarquivos() {             # função da opção localização arquivos
     pwd 
     read pause          #pausa o script
     principal           #volta para a função principal
 }
 
-mostrar_tipo_arquivo() {             # função informa o que é o arquivo se é um texto ou um shell script por exemplo 
+mostrartipoarquivo() {             # função informa o que é o arquivo se é um texto ou um shell script por exemplo 
     clear	#limpa a tela
     echo "digite arquivo"
 	read ARQUIVO
@@ -103,16 +97,16 @@ mostrar_tipo_arquivo() {             # função informa o que é o arquivo se é
     principal
 }
 
-criar_diretorio() {             # função cria um novo diretorio com o nome que o usuario indicar
+criardiretorio() {             # função cria um novo diretorio com o nome que o usuario indicar
     clear	#limpa a tela
-    echo "digite o diretorio que quer criar"
+    echo "digite o diretorio que voce quer criar"
 	read DIRETORIO
 	mkdir $DIRETORIO
     read pause
 	principal	
 }
 
-deletar_diretorio() {             # função deleta o diretorio informado pelo usuario
+deletardiretorio() {             # função deleta o diretorio informado pelo usuario
     clear	#limpa a tela
 	echo "digite o diretorio que quer deletar"
 	read DIRETORIO
@@ -121,7 +115,7 @@ deletar_diretorio() {             # função deleta o diretorio informado pelo u
     principal
 }
 
-mostra_maior() {             # função o usuario informa dois numeros e a função retorna o maior
+mostramaior() {             # função o usuario informa dois numeros e a função retorna o maior
     clear	#limpa a tela
 	echo "digite o primeiro numero"
 		read NUMERO1
@@ -138,7 +132,7 @@ mostra_maior() {             # função o usuario informa dois numeros e a funç
     
 }
 
-ultimas_linhas() {             # essa função mostra as ultimas linhas de um texto
+ultimaslinhas() {             # essa função mostra as ultimas linhas de um texto
     clear
 	echo "digite o nome do arquivo"
 	read ARQUIVO
@@ -149,7 +143,7 @@ ultimas_linhas() {             # essa função mostra as ultimas linhas de um te
 	principal	
 }
 
-primeiras_linhas() {             # essa função mostra as primeiras linhas de um texto
+primeiraslinhas() {             # essa função mostra as primeiras linhas de um texto
     clear
 	echo "digite o nome do arquivo"
 	read ARQUIVO
@@ -160,7 +154,7 @@ primeiras_linhas() {             # essa função mostra as primeiras linhas de u
 	principal	
 }
 
-localizar_comando() {             # função informa a localização de um comando
+localizarcomando() {             # função informa a localização de um comando
 	clear
     echo "Digite o comando"
 	read COMANDO
@@ -169,7 +163,7 @@ localizar_comando() {             # função informa a localização de um coman
     principal           
 }
 
-diretorio_form_arvore() {             # função informa a localização de um arquivo em formato de árvore
+diretorioformarvore() {             # função informa a localização de um arquivo em formato de árvore
     clear
 	echo "Digite o Diretorio"
 	read DIRETORIO
@@ -178,7 +172,7 @@ diretorio_form_arvore() {             # função informa a localização de um a
     principal           
 }
 
-copiar_arquivo() {             # função copia um arquivo para um diretorio informado pelo usuario
+copiararquivo() {             # função copia um arquivo para um diretorio informado pelo usuario
     clear
 	echo "Digite o arquivo que deseja copiar"
 	read ARQUIVO
@@ -189,18 +183,18 @@ copiar_arquivo() {             # função copia um arquivo para um diretorio inf
     principal           
 }
 
-mover_arquivo() {             # função move um arquivo para um diretorio informado pelo usuario
+moverarquivo() {             # função move um arquivo para um diretorio informado pelo usuario
     clear
-    echo "QUal o arquivo que deseja mover ?"
+    echo "Qual o arquivo que você deseja mover ?"
 	read ARQUIVO
-	echo "Digite para onde você deseja mover mais o nome do arquivo"
+	echo "Digite para onde você deseja mover e o nome do arquivo"
 	read LOCAL
 	mv $ARQUIVO $LOCAL  
     read pause          
     principal            
 }
 
-opcao_invalida() {      # Função da opção inválida
+opcaoinvalida() {      # Função da opção inválida
     clear
     echo "Opcao desconhecida."
     read pause
